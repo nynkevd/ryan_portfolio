@@ -1,0 +1,535 @@
+@font-face {
+  font-family: ryan_portfolio;
+  src: url("./fonts/Test-Regular.otf");
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("./fonts/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: avenirbold;
+  src: url("./fonts/AvenirNextLTPro-Bold.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: avenir;
+  text-decoration: none;
+}
+
+input {
+  font-family: ryan_portfolio;
+  padding: 1em;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+}
+
+body {
+  font-size: 62,5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+body.blue {
+  background: #86b2f4;
+}
+
+body.blue h1, body.blue h2, body.blue h3, body.blue p, body.blue header nav ul li a, body.blue a {
+  color: white;
+}
+
+body.blue header nav ul li a::after {
+  background-color: white;
+}
+
+body.blue header.thin {
+  background-color: #86b2f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#86b2f4), color-stop(62%, #86b2f4), color-stop(78%, rgba(134, 178, 244, 0.66)), color-stop(88%, rgba(134, 178, 244, 0.35)), color-stop(97%, rgba(134, 178, 244, 0)));
+  background: linear-gradient(180deg, #86b2f4 0%, #86b2f4 62%, rgba(134, 178, 244, 0.66) 78%, rgba(134, 178, 244, 0.35) 88%, rgba(134, 178, 244, 0) 97%);
+}
+
+body.blue header.thin nav {
+  background: transparent;
+}
+
+body.blue header.thin.expanded nav {
+  background: -webkit-gradient(linear, left top, left bottom, from(#86b2f4), color-stop(62%, #86b2f4), color-stop(78%, rgba(134, 178, 244, 0.66)), color-stop(88%, rgba(134, 178, 244, 0.35)), color-stop(97%, rgba(134, 178, 244, 0)));
+  background: linear-gradient(180deg, #86b2f4 0%, #86b2f4 62%, rgba(134, 178, 244, 0.66) 78%, rgba(134, 178, 244, 0.35) 88%, rgba(134, 178, 244, 0) 97%);
+}
+
+body.white {
+  background: white;
+}
+
+body.white h1, body.white h2, body.white h3, body.white p, body.white header h1, body.white header nav ul li a, body.white a {
+  color: black;
+}
+
+body.white header nav ul li a::after, body.white header h1 a::after {
+  background-color: black;
+}
+
+body.white header.thin {
+  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(62%, white), color-stop(78%, rgba(255, 255, 255, 0.66)), color-stop(88%, rgba(255, 255, 255, 0.35)), color-stop(97%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, white 0%, white 62%, rgba(255, 255, 255, 0.66) 78%, rgba(255, 255, 255, 0.35) 88%, rgba(255, 255, 255, 0) 97%);
+}
+
+body.white header.thin nav {
+  background: transparent;
+}
+
+body.white header.thin.expanded nav {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(62%, white), color-stop(78%, rgba(255, 255, 255, 0.66)), color-stop(88%, rgba(255, 255, 255, 0.35)), color-stop(97%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, white 0%, white 62%, rgba(255, 255, 255, 0.66) 78%, rgba(255, 255, 255, 0.35) 88%, rgba(255, 255, 255, 0) 97%);
+}
+
+header {
+  height: 20vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+header.index {
+  font-size: 2em;
+}
+
+header.index h1, header.index a {
+  font-family: ryan_portfolio;
+  font-weight: 400;
+}
+
+header > h1 a:first-of-type {
+  position: relative;
+}
+
+header > h1 a:first-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 20px;
+  background-color: white;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header > h1 a:first-of-type:hover {
+  cursor: pointer;
+}
+
+header.thin {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: fixed;
+  height: 8vh;
+  padding-left: 2em;
+  -webkit-transition: height 200ms ease-out, opacity 150ms ease-out;
+  transition: height 200ms ease-out, opacity 150ms ease-out;
+}
+
+header.thin nav {
+  position: fixed;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 0 2em;
+  height: 0%;
+  overflow: hidden;
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: height 200ms ease-out, opacity 150ms ease-out;
+  transition: height 200ms ease-out, opacity 150ms ease-out;
+}
+
+header.thin nav ul {
+  list-style: none;
+}
+
+header.thin nav ul li {
+  margin-top: calc((8vh - 2.25em) / 2);
+}
+
+header.thin nav ul li a {
+  position: relative;
+  font-family: ryan_portfolio;
+  font-size: 3em;
+}
+
+header.thin nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header.thin nav ul li a:hover {
+  cursor: pointer;
+}
+
+header.thin nav ul li:not(:first-of-type) a:hover::after {
+  width: 100%;
+}
+
+header.thin nav ul li:last-of-type {
+  margin-bottom: 2em;
+}
+
+header.thin.expanded nav {
+  -webkit-transition: height 200ms ease-out, opacity 150ms ease-out;
+  transition: height 200ms ease-out, opacity 150ms ease-out;
+  opacity: 1;
+  height: calc(4em*4 + 2em);
+  padding-bottom: 3em;
+}
+
+header.thin h1 {
+  font-size: 3em;
+}
+
+header.thin h1, header.thin a {
+  font-family: ryan_portfolio;
+  font-weight: 400;
+}
+
+header:not(.thin) > h1 {
+  margin-top: .5em;
+  font-family: ryan_portfolio;
+  color: white;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+header:not(.thin) > h1 span, header:not(.thin) > h1 a {
+  font-family: ryan_portfolio;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+header:not(.thin) > nav {
+  width: 25%;
+}
+
+header:not(.thin) > nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header:not(.thin) > nav ul li a {
+  -webkit-transition: all;
+  transition: all;
+  font-size: 1.2em;
+  font-weight: 700;
+  opacity: 0.5;
+  color: white;
+  position: relative;
+}
+
+header:not(.thin) > nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header:not(.thin) > nav ul li a.selected {
+  opacity: 1;
+}
+
+header:not(.thin) > nav ul li a.selected::after {
+  width: 100%;
+}
+
+header:not(.thin) > nav ul li a:hover {
+  opacity: 1;
+}
+
+header:not(.thin) > nav ul li a:hover::after {
+  width: 100%;
+}
+
+main {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  width: 65%;
+}
+
+main p {
+  max-width: 35%;
+}
+
+main h2#hi {
+  font-size: 14em;
+  font-family: ryan_portfolio;
+  font-weight: 500;
+}
+
+main .showcase {
+  margin-top: 2em;
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 3em;
+}
+
+main .showcase__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .showcase__item div {
+  padding: 1em;
+  border: 3px white solid;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 0;
+  padding-top: 66.67%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+main .showcase__item div img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+main .showcase__item h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+  font-size: 1.5em;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+main .showcase__item h3 span {
+  max-height: 100%;
+  margin-right: 0.5em;
+}
+
+main .showcase__item h3 span img {
+  max-height: 1.5em;
+}
+
+main .showcase__item--your div {
+  height: 100%;
+  padding-top: 0;
+}
+
+main .showcase__item--your div span {
+  color: white;
+  font-size: 8em;
+}
+
+main.case .pageheader, main.about .pageheader, main.contact .pageheader {
+  margin: 5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.case .pageheader h1, main.about .pageheader h1, main.contact .pageheader h1 {
+  font-family: ryan_portfolio;
+  font-weight: 550;
+  font-size: 3.5em;
+}
+
+main.case .pageheader--contact, main.about .pageheader--contact, main.contact .pageheader--contact {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+main.case .pageheader--contact h1, main.about .pageheader--contact h1, main.contact .pageheader--contact h1 {
+  font-family: avenirbold;
+  font-size: 3em;
+}
+
+main.case h2, main.about h2, main.contact h2 {
+  font-family: avenirbold;
+  font-weight: 900;
+  font-size: 2.5em;
+  margin-bottom: .5em;
+}
+
+main.case > img, main.about > img, main.contact > img {
+  max-width: 60%;
+  margin-bottom: 4em;
+}
+
+main.about {
+  position: relative;
+}
+
+main.about #ind, main.about #nl {
+  width: 200px;
+  position: absolute;
+}
+
+main.about #ind {
+  top: 400px;
+  left: -375px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  width: 250px;
+}
+
+main.about #nl {
+  top: 550px;
+  right: -150px;
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+footer {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+footer p {
+  font-family: ryan_portfolio;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+footer p:last-of-type {
+  color: blue;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 1100px) {
+  header.thin {
+    max-width: 100vw;
+  }
+  main .showcase {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main.case p, main.about p, main.contact p {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    font-size: 0.7em;
+  }
+  header.thin {
+    max-width: 100vw;
+  }
+  header.thin nav {
+    padding-left: 1em;
+  }
+  header.thin nav ul li::after {
+    height: 2px;
+  }
+  main {
+    width: 80%;
+  }
+  main .showcase {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  main.case p, main.about p, main.contact p {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    font-size: 0.5em;
+  }
+}
+/*# sourceMappingURL=main.css.map */
