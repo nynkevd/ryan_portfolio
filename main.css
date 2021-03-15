@@ -442,6 +442,40 @@ main.case > img, main.about > img, main.contact > img {
   margin-bottom: 4em;
 }
 
+main.case h2 {
+  position: relative;
+  margin-top: 2em;
+}
+
+main.case h2[data-number] {
+  margin-top: 5em;
+}
+
+main.case h2[data-number]::before {
+  z-index: -1;
+  content: attr(data-number);
+  position: absolute;
+  font-weight: 600;
+  font-size: 5em;
+  bottom: -.2em;
+  left: -.5ch;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #cccccc;
+}
+
+main.case h2::after {
+  content: attr(data-supertitle);
+  font-family: ryan_portfolio;
+  position: absolute;
+  font-weight: 400;
+  font-size: .75em;
+  top: -.7em;
+  left: 0;
+  color: black;
+  text-transform: lowercase;
+}
+
 main.about {
   position: relative;
 }
