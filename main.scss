@@ -14,6 +14,7 @@
 }
 
 * {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -392,6 +393,27 @@ main {
     }
 
     &.case {
+        #index {
+            list-style: decimal inside;
+            li {
+                font-weight: 600;
+                font-size: 1.2em;
+                max-width: fit-content;
+                margin-bottom: 0.7em;
+                color: rgb(134, 178, 244);
+                a {
+                    color: rgb(134, 178, 244);
+                    padding-bottom: .2em;
+                    border-bottom: rgb(134, 178, 244) 2px solid;
+                }
+                
+                &:last-of-type {
+                    margin-top: 1em;
+                    list-style-type: disc;
+                }
+            }
+        }
+
         h2 { position: relative; margin-top: 2em;}
         h2[data-number] {
             margin-top: 5em;

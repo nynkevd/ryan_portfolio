@@ -14,6 +14,7 @@
 }
 
 * {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -440,6 +441,31 @@ main.case h2, main.about h2, main.contact h2 {
 main.case > img, main.about > img, main.contact > img {
   max-width: 60%;
   margin-bottom: 4em;
+}
+
+main.case #index {
+  list-style: decimal inside;
+}
+
+main.case #index li {
+  font-weight: 600;
+  font-size: 1.2em;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-bottom: 0.7em;
+  color: #86b2f4;
+}
+
+main.case #index li a {
+  color: #86b2f4;
+  padding-bottom: .2em;
+  border-bottom: #86b2f4 2px solid;
+}
+
+main.case #index li:last-of-type {
+  margin-top: 1em;
+  list-style-type: disc;
 }
 
 main.case h2 {
