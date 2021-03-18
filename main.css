@@ -5,12 +5,20 @@
 
 @font-face {
   font-family: avenir;
-  src: url("./fonts/AvenirNextLTPro-Regular.otf");
+  src: url("./fonts/AvenirNext-Regular.ttf");
+  font-weight: normal;
 }
 
 @font-face {
-  font-family: avenirbold;
-  src: url("./fonts/AvenirNextLTPro-Bold.otf");
+  font-family: avenir;
+  src: url("./fonts/AvenirNext-Medium.ttf");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: avenir;
+  src: url("./fonts/AvenirNext-Bold.ttf");
+  font-weight: bold;
 }
 
 * {
@@ -20,6 +28,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: avenir;
+  font-weight: regular;
   text-decoration: none;
 }
 
@@ -32,8 +41,11 @@ input {
   outline: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-size: 62,5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,7 +281,7 @@ header:not(.thin) > nav ul li a {
   -webkit-transition: all;
   transition: all;
   font-size: 1.2em;
-  font-weight: 700;
+  font-weight: medium;
   opacity: 0.5;
   color: white;
   position: relative;
@@ -311,6 +323,7 @@ main {
 
 main p {
   max-width: 35%;
+  font-size: 0.75rem;
 }
 
 main h2#hi {
@@ -375,6 +388,7 @@ main .showcase__item h3 {
           align-items: center;
   margin-top: 1em;
   font-size: 1.5em;
+  font-weight: 300;
   -ms-flex-item-align: center;
       align-self: center;
 }
@@ -417,7 +431,8 @@ main.case .pageheader, main.about .pageheader, main.contact .pageheader {
 main.case .pageheader h1, main.about .pageheader h1, main.contact .pageheader h1 {
   font-family: ryan_portfolio;
   font-weight: 550;
-  font-size: 3.5em;
+  font-size: 3em;
+  text-align: center;
 }
 
 main.case .pageheader--contact, main.about .pageheader--contact, main.contact .pageheader--contact {
@@ -427,14 +442,13 @@ main.case .pageheader--contact, main.about .pageheader--contact, main.contact .p
 }
 
 main.case .pageheader--contact h1, main.about .pageheader--contact h1, main.contact .pageheader--contact h1 {
-  font-family: avenirbold;
+  font-weight: 500;
   font-size: 3em;
 }
 
 main.case h2, main.about h2, main.contact h2 {
-  font-family: avenirbold;
   font-weight: 900;
-  font-size: 2.5em;
+  font-size: 1.5rem;
   margin-bottom: .5em;
 }
 
@@ -448,8 +462,7 @@ main.case #index {
 }
 
 main.case #index li {
-  font-weight: 600;
-  font-size: 1.2em;
+  font-weight: medium;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -459,8 +472,24 @@ main.case #index li {
 
 main.case #index li a {
   color: #86b2f4;
-  padding-bottom: .2em;
-  border-bottom: #86b2f4 2px solid;
+  position: relative;
+  line-height: 1.5;
+}
+
+main.case #index li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #86b2f4;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+main.case #index li a:hover::after {
+  width: 100%;
 }
 
 main.case #index li:last-of-type {
@@ -471,6 +500,7 @@ main.case #index li:last-of-type {
 main.case h2 {
   position: relative;
   margin-top: 2em;
+  font-weight: medium;
 }
 
 main.case h2[data-number] {
@@ -483,7 +513,7 @@ main.case h2[data-number]::before {
   position: absolute;
   font-weight: 600;
   font-size: 5em;
-  bottom: -.2em;
+  bottom: -.5ch;
   left: -.5ch;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -499,7 +529,7 @@ main.case h2::after {
   top: -.7em;
   left: 0;
   color: black;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 main.about {
@@ -526,8 +556,116 @@ main.about #nl {
           transform: rotate(12deg);
 }
 
+.imagegrid {
+  display: -ms-grid;
+  display: grid;
+  max-width: 45%;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 4fr 1fr;
+      grid-template-rows: 4fr 1fr;
+  grid-gap: 1em;
+}
+
+.imagegrid div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 0;
+  padding-top: 56.25%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.imagegrid > div:first-of-type {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.imagegrid > div:not(:first-of-type) {
+  width: 100%;
+  -webkit-box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.7);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.imagegrid > div:not(:first-of-type)::after {
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  bottom: 5px;
+  right: 5px;
+  content: "";
+  background-image: url("./images/photo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.imagegrid > div:not(:first-of-type):hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.imagegrid > div:not(:first-of-type):hover::before {
+  position: absolute;
+  color: white;
+  top: .5ch;
+  left: 1ch;
+  content: attr(data-title);
+  max-width: 100%;
+}
+
+.imagegrid > div:not(:first-of-type):hover::after {
+  background: none;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.image-popup__background {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.image-popup img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: auto;
+  max-width: 100vw;
+}
+
 footer {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
   margin-top: 3em;
+  padding-top: 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -560,6 +698,9 @@ footer p:last-of-type {
   main.case p, main.about p, main.contact p {
     max-width: 80%;
   }
+  main .imagegrid {
+    max-width: 80%;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -582,7 +723,13 @@ footer p:last-of-type {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  main.case .pageheader, main.about .pageheader, main.contact .pageheader {
+    margin-top: 2em;
+  }
   main.case p, main.about p, main.contact p {
+    max-width: 100%;
+  }
+  main .imagegrid {
     max-width: 100%;
   }
 }

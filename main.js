@@ -31,3 +31,34 @@ function expand() {
         header.classList.remove("expanded");
     }
 }
+
+function openImage(e) {
+    const body = document.getElementsByTagName("BODY")[0];
+    const wrapper = document.getElementById("image-popup__wrapper");
+    const image = document.getElementById("image-popup__image");
+
+    image.setAttribute('src', e.getAttribute('data-image'));
+
+    if (!wrapper.classList.contains("hidden")) {
+        wrapper.classList.add("hidden")
+    } else {
+        wrapper.classList.remove("hidden");
+    }
+
+    body.setAttribute('style', "overflow: hidden");
+
+    console.log("test", e.getAttribute('data-image'));
+}
+
+function hideImage() {
+    const body = document.getElementsByTagName("BODY")[0];
+    const wrapper = document.getElementById("image-popup__wrapper");
+
+    if (!wrapper.classList.contains("hidden")) {
+        wrapper.classList.add("hidden")
+    }
+
+    body.removeAttribute('style');
+
+    // console.log("test", e.getAttribute('data-image'));
+}
