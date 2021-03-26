@@ -32,15 +32,6 @@
     text-decoration: none;
 }
 
-input {
-    font-family: ryan_portfolio;
-    padding: 1em;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 50px;
-    outline: none;
-}
-
 html {
     font-size: 16px;
 }
@@ -150,13 +141,14 @@ header {
         justify-content: flex-start;
         position: fixed;
         height: 8vh;
-        padding-left: 2em;
         transition: height 200ms ease-out, opacity 150ms ease-out;
+
+        > h1 { padding-left: 1rem;}
 
         nav {
             position: fixed;
             align-self: flex-start;
-            padding-left: 0 2em;
+            padding-left: 2em;
             height: 0%;
             overflow: hidden;
             opacity: 0;
@@ -217,7 +209,7 @@ header {
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             // color: rgba($color: #fff, $alpha: 0.5);
         }
         h1, a {
@@ -295,8 +287,8 @@ main {
     width: 65%;
 
     p {
-        max-width: 35%;
-        font-size: 0.75rem;
+        max-width: 40%;
+        font-size: 1rem;
     }
     
     h2#hi {
@@ -445,7 +437,7 @@ main {
             }
         }
 
-        h2 { position: relative; margin-top: 2em; font-weight: medium; }
+        h2 { font-size: 2rem; position: relative; margin-top: 2em; font-weight: medium; }
         h2[data-number] {
             margin-top: 5em;
             
@@ -498,6 +490,74 @@ main {
         }
     }
 
+    &.contact {
+        // background-color: blue;
+
+        // input[type="text"] {
+        //     background-image: url('./images/inputborder1.svg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: contain;
+        //     padding: 1em 3em 1em 1em;
+        //     width: 50%;
+        // }
+
+        form {
+            display: grid;
+            // grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 2em;
+
+            div {
+                background: transparent;
+                position: relative;
+
+                &::before {
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    background-image: url('./images/inputborder1.svg');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                input, textarea {
+                    border: none;
+                    background: none;
+                    outline: none;
+                    font-family: ryan_portfolio;
+                    font-size: 1.5em;
+                    width: 100%;
+                    padding: 1em;
+                    color: white;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: rgba($color: white, $alpha: 0.8);
+                    }
+                }
+
+                textarea {
+                    height: 10em;
+                    padding: 2.5em 1.5em;
+                    overflow: hidden;
+                    resize: none;
+                }
+
+                &:last-of-type {
+                    grid-column: 1 / span 2;
+                }
+            }
+        }
+    }
 }
 
 .imagegrid {
@@ -546,6 +606,7 @@ main {
         &:hover {
             cursor: pointer;
             transform: scale(1.05);
+            box-shadow:inset 0 0 0 100px rgba(0, 0, 0, 0.2);
 
             &::before {
                 position: absolute;
@@ -589,7 +650,8 @@ main {
         bottom: 0;
         margin: auto;
         margin-left: auto;
-        max-width: 100vw;
+        max-width: 90vw;
+        max-height: 90vh;
     }
 }
 
@@ -629,6 +691,7 @@ footer {
         &.case, &.about, &.contact {
             p {
                 max-width: 80%;
+                font-size: 0.85em;
             }
         }
         .imagegrid { max-width: 80%;}
@@ -663,6 +726,7 @@ footer {
             }
             p {
                 max-width: 100%;
+                font-size: 0.75em;
             }
         }
 
