@@ -1,6 +1,6 @@
 @font-face {
     font-family: ryan_portfolio;
-    src: url('./fonts/Test-Regular.otf');
+    src: url('./fonts/Ryan-Regular.otf');
 }
 
 @font-face {
@@ -99,22 +99,12 @@ body {
 }
 
 header {
-    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     z-index: 2;
-
-    &.index {
-        font-size: 2em;
-
-        h1, a {
-            font-family: ryan_portfolio;
-            font-weight: 400;
-        }
-    }
 
     > h1 a:first-of-type {
         position: relative;
@@ -143,7 +133,7 @@ header {
         height: 8vh;
         transition: height 200ms ease-out, opacity 150ms ease-out;
 
-        > h1 { padding-left: 1rem;}
+        > h1 { padding-left: 2rem;}
 
         nav {
             position: fixed;
@@ -164,7 +154,7 @@ header {
                     a {
                         position: relative;
                         font-family: ryan_portfolio;
-                        font-size: 3em;
+                        font-size: 2.5em;
 
                         &::after {
                             content: "";
@@ -219,60 +209,57 @@ header {
         
     }
 
-    &:not(.thin) > h1 {
-        margin-top: .5em;
-        font-family: ryan_portfolio;
-        color: white;
-        font-weight: 400;
-        font-size: 3em;
+    &:not(.thin) {
+        font-size: 2.5em;
 
-        span, a {
+        & > h1 {
+            margin-top: .5em;
             font-family: ryan_portfolio;
-            text-decoration: none;
+            color: white;
             font-weight: 400;
-            font-size: 1em;
+            margin-bottom: .5em;
         }
-    }
+        
+        & > nav {
+            width: 20%;
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+        
+                li {
+                    a {
+                        transition: all;
+                        font-size: .5em;
+                        font-weight: medium;
+                        // opacity: 0.5;
+                        color:white;
+                        position: relative;
 
-    &:not(.thin) > nav {
-        width: 25%;
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-    
-            li {
-                a {
-                    transition: all;
-                    font-size: 1.2em;
-                    font-weight: medium;
-                    opacity: 0.5;
-                    color:white;
-                    position: relative;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        bottom: -8px;
-                        left: 0;
-                        width: 0;
-                        height: 2px;
-                        background-color: rgba($color: #fff, $alpha: 0.5);
-                        transition: all .5s;
-                    }
-    
-                    &.selected {
-                        opacity: 1;
-                        
                         &::after {
-                            width: 100%;
+                            content: "";
+                            position: absolute;
+                            bottom: -8px;
+                            left: 0;
+                            width: 0;
+                            height: 2px;
+                            background-color: rgba($color: #fff, $alpha: 0.5);
+                            transition: all .5s;
                         }
-                    }
+        
+                        &.selected {
+                            opacity: 1;
+                            
+                            &::after {
+                                width: 100%;
+                            }
+                        }
 
-                    &:hover {
-                        opacity: 1;
-                        &::after {
-                            width: 100%;
+                        &:hover {
+                            opacity: 1;
+                            &::after {
+                                width: 100%;
+                            }
                         }
                     }
                 }
@@ -508,53 +495,34 @@ main {
             grid-template-columns: 1fr 1fr;
             grid-gap: 2em;
 
-            div {
-                background: transparent;
-                position: relative;
+            input, textarea {
+                border: none;
+                background: white;
+                outline: none;
+                border-radius: 200px;
+                font-family: ryan_portfolio;
+                font-size: 2em;
+                width: 100%;
+                padding: .85em;
+                color: black;
+                border-radius: 3ch;
 
-                &::before {
-                    z-index: -1;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    content: "";
-                    background-image: url('./images/inputborder1.svg');
-                    background-size: 100% 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                input, textarea {
-                    border: none;
-                    background: none;
+                &:focus {
                     outline: none;
-                    font-family: ryan_portfolio;
-                    font-size: 1.5em;
-                    width: 100%;
-                    padding: 1em;
-                    color: white;
-
-                    &:focus {
-                        outline: none;
-                    }
-
-                    &::placeholder {
-                        color: rgba($color: white, $alpha: 0.8);
-                    }
                 }
 
-                textarea {
-                    height: 10em;
-                    padding: 2.5em 1.5em;
-                    overflow: hidden;
-                    resize: none;
+                &::placeholder {
+                    color: rgba($color: black, $alpha: 0.6);
                 }
+            }
 
-                &:last-of-type {
-                    grid-column: 1 / span 2;
-                }
+            textarea {
+                border-radius: 3ch;
+                height: 10em;
+                padding: 1em;
+                overflow: hidden;
+                resize: none;
+                grid-column: 1 / span 2;
             }
         }
     }
@@ -650,7 +618,7 @@ main {
         bottom: 0;
         margin: auto;
         margin-left: auto;
-        max-width: 90vw;
+        width: 90vw;
         max-height: 90vh;
     }
 }
@@ -663,6 +631,7 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-self: flex-end;
 
     p {
         font-family: ryan_portfolio;
@@ -676,10 +645,16 @@ footer {
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
     header {
         &.thin {
             max-width: 100vw;
+        }
+
+        &:not(.thin) {
+            nav {
+                width: 50%;
+            }
         }
     } 
 
@@ -688,12 +663,17 @@ footer {
             grid-template-columns: 1fr 1fr;
         }
 
-        &.case, &.about, &.contact {
-            p {
-                max-width: 80%;
-                font-size: 0.85em;
-            }
+        p {
+            max-width: 80%;
+            font-size: 0.85em;
         }
+
+        // &.case, &.about, &.contact {
+        //     p {
+        //         max-width: 80%;
+        //         font-size: 0.85em;
+        //     }
+        // }
         .imagegrid { max-width: 80%;}
     }
 }
@@ -704,12 +684,19 @@ footer {
         &.thin {
             max-width: 100vw;
 
-            nav {
+            > h1 {
                 padding-left: 1em;
+            }
 
+            nav {
                 ul li::after {
                     height: 2px;
                 }
+            }
+        }
+        &:not(.thin) {
+            nav {
+                width: 100%;
             }
         }
     }
@@ -720,13 +707,14 @@ footer {
             grid-template-columns: 1fr;
         }
 
+        p {
+            max-width: 100%;
+            // font-size: 0.75em;
+        }
+
         &.case, &.about, &.contact {
             .pageheader {
                 margin-top: 2em;
-            }
-            p {
-                max-width: 100%;
-                font-size: 0.75em;
             }
         }
 

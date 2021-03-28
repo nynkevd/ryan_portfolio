@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./main.js"> </script>
         <link rel="stylesheet" type="text/css" href="./main.css">
-        <title>Document</title>
+        <title>Ryan Majoor</title>
     </head>
     <body class="blue">
         <header class="thin" id="header">
@@ -26,12 +26,20 @@
                 <h1> Reach out! </h1>
             </div>
 
-            <form> 
+            <!-- <form> 
                     <div> <input type="text" placeholder="Name..."/> </div>
                     
                     <div> <input type="email" placeholder="Email..."/> </div>
 
                     <div> <textarea name="message" placeholder="Message..."></textarea> </div>
+            </form> -->
+
+            <form method=”POST” name=”ContactForm” autocomplete="off">
+                <input type="text" placeholder="Name..." name="name" required />
+                <input type="email" placeholder="Email..." name="email" required />
+                <textarea placeholder="Message..." name="message" required></textarea>
+
+                <button type="submit"> Send </button>
             </form>
         </main>
         <footer>

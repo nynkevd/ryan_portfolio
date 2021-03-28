@@ -1,6 +1,6 @@
 @font-face {
   font-family: ryan_portfolio;
-  src: url("./fonts/Test-Regular.otf");
+  src: url("./fonts/Ryan-Regular.otf");
 }
 
 @font-face {
@@ -105,7 +105,6 @@ body.white header.thin.expanded nav {
 }
 
 header {
-  height: 20vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,15 +119,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
-}
-
-header.index {
-  font-size: 2em;
-}
-
-header.index h1, header.index a {
-  font-family: ryan_portfolio;
-  font-weight: 400;
 }
 
 header > h1 a:first-of-type {
@@ -170,7 +160,7 @@ header.thin {
 }
 
 header.thin > h1 {
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
 header.thin nav {
@@ -197,7 +187,7 @@ header.thin nav ul li {
 header.thin nav ul li a {
   position: relative;
   font-family: ryan_portfolio;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 header.thin nav ul li a::after {
@@ -242,23 +232,20 @@ header.thin h1, header.thin a {
   font-weight: 400;
 }
 
+header:not(.thin) {
+  font-size: 2.5em;
+}
+
 header:not(.thin) > h1 {
   margin-top: .5em;
   font-family: ryan_portfolio;
   color: white;
   font-weight: 400;
-  font-size: 3em;
-}
-
-header:not(.thin) > h1 span, header:not(.thin) > h1 a {
-  font-family: ryan_portfolio;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1em;
+  margin-bottom: .5em;
 }
 
 header:not(.thin) > nav {
-  width: 25%;
+  width: 20%;
 }
 
 header:not(.thin) > nav ul {
@@ -266,17 +253,15 @@ header:not(.thin) > nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 header:not(.thin) > nav ul li a {
   -webkit-transition: all;
   transition: all;
-  font-size: 1.2em;
+  font-size: .5em;
   font-weight: medium;
-  opacity: 0.5;
   color: white;
   position: relative;
 }
@@ -559,64 +544,45 @@ main.contact form {
   grid-gap: 2em;
 }
 
-main.contact form div {
-  background: transparent;
-  position: relative;
-}
-
-main.contact form div::before {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  background-image: url("./images/inputborder1.svg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-main.contact form div input, main.contact form div textarea {
+main.contact form input, main.contact form textarea {
   border: none;
-  background: none;
+  background: white;
   outline: none;
+  border-radius: 200px;
   font-family: ryan_portfolio;
-  font-size: 1.5em;
+  font-size: 2em;
   width: 100%;
-  padding: 1em;
-  color: white;
+  padding: .85em;
+  color: black;
+  border-radius: 3ch;
 }
 
-main.contact form div input:focus, main.contact form div textarea:focus {
+main.contact form input:focus, main.contact form textarea:focus {
   outline: none;
 }
 
-main.contact form div input::-webkit-input-placeholder, main.contact form div textarea::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
+main.contact form input::-webkit-input-placeholder, main.contact form textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-main.contact form div input:-ms-input-placeholder, main.contact form div textarea:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
+main.contact form input:-ms-input-placeholder, main.contact form textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-main.contact form div input::-ms-input-placeholder, main.contact form div textarea::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
+main.contact form input::-ms-input-placeholder, main.contact form textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-main.contact form div input::placeholder, main.contact form div textarea::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+main.contact form input::placeholder, main.contact form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-main.contact form div textarea {
+main.contact form textarea {
+  border-radius: 3ch;
   height: 10em;
-  padding: 2.5em 1.5em;
+  padding: 1em;
   overflow: hidden;
   resize: none;
-}
-
-main.contact form div:last-of-type {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -726,7 +692,7 @@ main.contact form div:last-of-type {
   bottom: 0;
   margin: auto;
   margin-left: auto;
-  max-width: 90vw;
+  width: 90vw;
   max-height: 90vh;
 }
 
@@ -743,6 +709,7 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  justify-self: flex-end;
 }
 
 footer p {
@@ -756,15 +723,18 @@ footer p:last-of-type {
   font-size: 1.5em;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   header.thin {
     max-width: 100vw;
+  }
+  header:not(.thin) nav {
+    width: 50%;
   }
   main .showcase {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  main.case p, main.about p, main.contact p {
+  main p {
     max-width: 80%;
     font-size: 0.85em;
   }
@@ -780,11 +750,14 @@ footer p:last-of-type {
   header.thin {
     max-width: 100vw;
   }
-  header.thin nav {
+  header.thin > h1 {
     padding-left: 1em;
   }
   header.thin nav ul li::after {
     height: 2px;
+  }
+  header:not(.thin) nav {
+    width: 100%;
   }
   main {
     width: 80%;
@@ -793,12 +766,11 @@ footer p:last-of-type {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  main p {
+    max-width: 100%;
+  }
   main.case .pageheader, main.about .pageheader, main.contact .pageheader {
     margin-top: 2em;
-  }
-  main.case p, main.about p, main.contact p {
-    max-width: 100%;
-    font-size: 0.75em;
   }
   main .imagegrid {
     max-width: 100%;
