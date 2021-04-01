@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../main.js"></script>
+        <link rel="stylesheet" type="text/css" href="../main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
+        <title>Ryan Majoor - Circles</title>
+    </head>
+    <body class="white">
+        <header class="thin" id="header">
+            <h1> <a class="selected" onclick="expand()">Projects</a> <a href="/"> by Ryan Majoor</a></h1> 
+            <nav id="nav">
+                <ul>
+                    <li> <a onclick="expand()">X</a> </li>
+                    <li> <a href="/projects.html"> Projects </a> </li>
+                    <li> <a href="/about.html"> About </a> </li>
+                    <li> <a href="/contact.html"> Contact </a> </li>
+                </ul>
+            </nav>                 
+        </header>
+        
+        <main class="case">
+            <div class="pageheader" id="pageheader">
+                <img src="../images/placeholder.png" alt="">
+                <h1> Product Design </h1>
+            </div>
+
+            <h2 data-supertitle="overview"> What is Flex Widgets</h2>
+            <p> An app to let users create fully custom widgets with an array of design tools and
+                information to display, right at their finger tips. </p>
+            
+            <h2 data-supertitle="role"> What I did in this project </h2>
+            <p> My role in Flex Widgets was leading the product design of the app. <br/><br/>
+                Yannik Schrade: developer and creator of Flex Widgets <br/>
+                Nikias Molina: Marketing and initial video material for Flex Widgets </p>
+
+            <h2 data-supertitle="problem statement"> The user was forgotten </h2>
+            <p> Flex Widgets was unintuitive; items to add were unclear, the app lacked visual hierarchy
+                and segmenting, the look and experience of the app were unattractive and impractical. </p>
+
+            <h2 data-supertitle="hypthesis and goals"> Satisfying expectations </h2>
+            <p> By implementing all established default features users expect from an iOS app and
+                categorizing the app’s functions into their respective segments Flex Widgets will enable
+                users to utilize every part of Flex Widgets making it more inviting and fun to use. </p>
+
+            <h2 data-supertitle="research"> It didn’t feel like an app </h2>
+            <p> User research proved my initial reaction of the app right, it showed the empty space on
+                the left drew too much attention or threw users off, the top selection falsely indicated a
+                process to be followed and the app’s abilities were not represented. </p>
+
+            <h2 data-supertitle="concepts"> A deep dive </h2>
+            <p> Early on we decided Flex Widgets had the opportunity to stand out by polling the
+                interface and making it stand out. I tried implementing all the new features and structures
+                while exploring a neumorphic, dark, light and colored looks.</p>
+
+            <h2 data-supertitle="solution"> What goes where </h2>
+            <p> Flex Widgets needed a place to build the widgets and a place to finalize them. These
+                became the editing and exporting personas. Editing has all the tools on the left, items
+                below the widget/canvas and layers on the right. The exporting persona allows users to
+                give the widget a name, save the theme of the widget so the next ones can look identical
+                in style or share it online. </p>
+
+            <div class="image-popup hidden" id="image-popup__wrapper">
+                <div class="image-popup__background" onclick="hideImage()"> </div>
+                <img src="" alt="" id="image-popup__image">
+            </div>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

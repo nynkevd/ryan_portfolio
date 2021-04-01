@@ -181,10 +181,6 @@ header.thin nav ul {
   list-style: none;
 }
 
-header.thin nav ul li {
-  margin-top: calc((8vh - 2.25em) / 2);
-}
-
 header.thin nav ul li a {
   position: relative;
   font-family: ryan_portfolio;
@@ -435,6 +431,10 @@ main.case h2, main.about h2, main.contact h2 {
 main.case > img, main.about > img, main.contact > img {
   max-width: 60%;
   margin-bottom: 4em;
+}
+
+main.case img {
+  max-width: 40%;
 }
 
 main.case #index {

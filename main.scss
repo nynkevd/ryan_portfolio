@@ -150,8 +150,6 @@ header {
                 list-style: none;
 
                 li {                     
-                    margin-top: calc((8vh - 2.25em) / 2);
-
                     a {
                         position: relative;
                         font-family: ryan_portfolio;
@@ -388,6 +386,10 @@ main {
     }
 
     &.case {
+        img {
+            max-width: 40%;
+        }
+        
         #index {
             list-style: decimal inside;
             li {
